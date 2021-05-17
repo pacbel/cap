@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>cap</name>
+    </assembly>
+    <members>
+        <member name="T:cap.Business.Entities.Usuario">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Business.Entities.Usuario.Codigo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Business.Entities.Usuario.Login">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Business.Entities.Usuario.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Business.Entities.Usuario.Senha">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Business.Repositories.IUsuarioRepository.Adicionar(cap.Business.Entities.Usuario)">
+            <summary>
+            
+            </summary>
+            <param name="usuario"></param>
+        </member>
+        <member name="M:cap.Business.Repositories.IUsuarioRepository.Commit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Business.Repositories.IUsuarioRepository.ObterUsuario(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="login"></param>
+            <returns></returns>
+        </member>
+        <member name="T:cap.Models.ErroGenericoViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.ErroGenericoViewModel.Mensagem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:cap.Models.Usuarios.LoginViewModelInput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.LoginViewModelInput.Login">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.LoginViewModelInput.Senha">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:cap.Models.Usuarios.RegistroViewModelInput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.RegistroViewModelInput.Login">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.RegistroViewModelInput.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.RegistroViewModelInput.Senha">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:cap.Models.Usuarios.UsuarioViewModelOutput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.UsuarioViewModelOutput.Codigo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.UsuarioViewModelOutput.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.Usuarios.UsuarioViewModelOutput.Login">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:cap.Models.ValidaCampoViewModelOutput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:cap.Models.ValidaCampoViewModelOutput.Erros">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Models.ValidaCampoViewModelOutput.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="erros"></param>
+        </member>
+        <member name="T:cap.Configurations.IAuthenticationService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Configurations.IAuthenticationService.GerarToken(cap.Models.Usuarios.UsuarioViewModelOutput)">
+            <summary>
+            
+            </summary>
+            <param name="usuarioViewModelOutput"></param>
+            <returns></returns>
+        </member>
+        <member name="T:cap.Configurations.JwtServices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Configurations.JwtServices.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:cap.Configurations.JwtServices.GerarToken(cap.Models.Usuarios.UsuarioViewModelOutput)">
+            <summary>
+            
+            </summary>
+            <param name="usuarioViewModelOutput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:cap.Controllers.ContaPagarController.Post(cap.Models.ContaPagar)">
+            <summary>
+            Este serviço permite cadastrar curso para o usuário autenticado.
+            </summary>
+            <returns>Retorna status ok, dados do usuário e token em caso de sucesso</returns>
+        </member>
+        <member name="M:cap.Controllers.PessoaFisicaController.Post(cap.Business.Entities.PessoaFisica)">
+            <summary>
+            Este serviço permite cadastrar curso para o usuário autenticado.
+            </summary>
+            <returns>Retorna status ok, dados do usuário e token em caso de sucesso</returns>
+        </member>
+        <member name="M:cap.Controllers.PessoaJuridicaController.Post(cap.Business.Entities.PessoaJuridica)">
+            <summary>
+            Este serviço permite cadastrar curso para o usuário autenticado.
+            </summary>
+            <returns>Retorna status ok, dados do usuário e token em caso de sucesso</returns>
+        </member>
+        <member name="T:cap.Controllers.UsuarioController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Controllers.UsuarioController.#ctor(cap.Business.Repositories.IUsuarioRepository,cap.Configurations.IAuthenticationService)">
+            <summary>
+            
+            </summary>
+            <param name="usuarioRepository"></param>
+            <param name="authenticationService"></param>
+        </member>
+        <member name="M:cap.Controllers.UsuarioController.Logar(cap.Models.Usuarios.LoginViewModelInput)">
+            <summary>
+            Serviço de autenticação do usuário
+            </summary>
+            <returns>Retorna status ok, dados do usuário e token em caso de sucesso</returns>
+        </member>
+        <member name="M:cap.Controllers.UsuarioController.Registrar(cap.Models.Usuarios.RegistroViewModelInput)">
+            <summary>
+            Este serviço permite cadastrar o Usuário no banco de dados.
+            </summary>
+            <param name="loginViewModelInput"></param>
+            <returns></returns>
+        </member>
+        <member name="P:cap.Data.CapDBContext.Usuario">
+            <summary>
+            
+            </summary>
+            
+        </member>
+        <member name="T:cap.Data.Mappings.UsuarioMapping">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Data.Mappings.UsuarioMapping.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{cap.Business.Entities.Usuario})">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:cap.Infraestruture.Data.Repositories.UsuarioRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:cap.Filters.ValidacaoModelStateCustomizado">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:cap.Filters.ValidacaoModelStateCustomizado.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+    </members>
+</doc>
